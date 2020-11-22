@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
+const { web } = require("webpack");
 
 module.exports = {
   entry: {
@@ -62,9 +63,10 @@ module.exports = {
   ],
 
   devServer: {
+    open: true,
     contentBase: path.join(__dirname, "dist"),
     port: 3333,
-    open: true,
     stats: "errors-only",
+    clientLogLevel: "silent",
   },
 };
